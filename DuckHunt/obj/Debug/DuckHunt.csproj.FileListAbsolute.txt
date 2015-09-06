@@ -1,0 +1,14 @@
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\bin\Debug\DuckHunt.exe.config
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\bin\Debug\DuckHunt.exe
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\bin\Debug\DuckHunt.pdb
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\DuckHunt.csprojResolveAssemblyReference.cache
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\App.g.cs
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\DuckHunt_MarkupCompile.cache
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\DuckHunt_MarkupCompile.lref
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\DuckHunt.g.resources
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\DuckHunt.Properties.Resources.resources
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\DuckHunt.csproj.GenerateResource.Cache
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\DuckHunt.exe
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\DuckHunt.pdb
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\Views\MainWindow.g.cs
+c:\users\bryan\documents\visual studio 2015\Projects\DuckHunt\DuckHunt\obj\Debug\Views\MainWindow.baml
