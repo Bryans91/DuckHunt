@@ -7,20 +7,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Shapes;
 
-namespace DuckHunt.Controllers
+namespace DuckHunt
 {
     class GameController
     {
 
         private ArrayList ducks;
-        private MainWindow n = new MainWindow();
+        private MainWindow n;
 
-        public GameController()
+        public GameController(MainWindow n)
         {
+            this.n = n;
             ducks = new ArrayList();
             //create duck and add to this.ducks
            
-            var duckie = n.DrawRect(25, 25, 200, 200);
+            var duckie = n.DrawRect(10, 10, 50, 50);
             ducks.Add(duckie);
             Thread t = new Thread(new ThreadStart(gameLoop));
             t.Start();
@@ -32,7 +33,7 @@ namespace DuckHunt.Controllers
             {
                 foreach(Rectangle d in ducks)
                 {
-                    n.moveRect(d,2);
+                    //n.moveRect(d,2);
                 }
                
                 //moveducks

@@ -10,8 +10,10 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
+using System.Diagnostics;
+using System.Windows.Threading;
 
 
 namespace DuckHunt
@@ -21,23 +23,26 @@ namespace DuckHunt
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        GameController controller;
+
         public MainWindow()
         {
             InitializeComponent();
+            controller = new GameController(this);
         }
 
         public Rectangle DrawRect(int x, int y,int w,int h)
         {
             Rectangle rect = new Rectangle
             {
-                Stroke = Brushes.LightBlue,
-                StrokeThickness = 2,
+                Fill = Brushes.Aqua,
                 Width = w,
-                Height = h
-            
-            };
-            Canvas.SetLeft(rect, x);
-            Canvas.SetTop(rect, y);
+                Height = h,
+                Cursor = Cursors.Hand
+        };
+            rect.MouseLeftButtonDown += getShot;
+            replaceDuck(rect);
             canvas.Children.Add(rect);
             return rect;
         }
@@ -46,9 +51,23 @@ namespace DuckHunt
         public void moveRect(Rectangle rect, int velocity)
         {
             double pos = Canvas.GetLeft(rect);
-            Canvas.SetLeft(rect, pos+velocity);
-           
+            Canvas.SetLeft(rect, pos + velocity);
+
         }
-       
+
+        private void replaceDuck(Rectangle rect)
+        {
+            Random rnd = new Random();
+            int x = rnd.Next(1, 550);
+            int y = rnd.Next(1, 300);
+            rect.Margin = new Thickness(x, y, 50, 50);
+        }
+
+        private void getShot(object sender, RoutedEventArgs e)
+        {
+            Rectangle rect = sender as Rectangle;
+            replaceDuck(rect);
+        }
+
     }
 }
