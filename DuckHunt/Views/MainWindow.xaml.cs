@@ -24,49 +24,23 @@ namespace DuckHunt
     public partial class MainWindow : Window
     {
 
-        GameController controller;
+        GameController c;
 
         public MainWindow()
         {
             InitializeComponent();
-            controller = new GameController(this);
+            c = new GameController(this);
         }
 
-        public Rectangle DrawRect(int x, int y,int w,int h)
+        private void dragable(object sender, MouseButtonEventArgs e)
         {
-            Rectangle rect = new Rectangle
-            {
-                Fill = Brushes.Aqua,
-                Width = w,
-                Height = h,
-                Cursor = Cursors.Hand
-        };
-            rect.MouseLeftButtonDown += getShot;
-            replaceDuck(rect);
-            canvas.Children.Add(rect);
-            return rect;
+            this.DragMove();
         }
 
-
-        public void moveRect(Rectangle rect, int velocity)
+        private void closeGame(object sender, RoutedEventArgs e)
         {
-            double pos = Canvas.GetLeft(rect);
-            Canvas.SetLeft(rect, pos + velocity);
-
-        }
-
-        private void replaceDuck(Rectangle rect)
-        {
-            Random rnd = new Random();
-            int x = rnd.Next(1, 550);
-            int y = rnd.Next(1, 300);
-            rect.Margin = new Thickness(x, y, 50, 50);
-        }
-
-        private void getShot(object sender, RoutedEventArgs e)
-        {
-            Rectangle rect = sender as Rectangle;
-            replaceDuck(rect);
+            Dispatcher.CurrentDispatcher.Thread.Abort();
+            this.Close();
         }
 
     }

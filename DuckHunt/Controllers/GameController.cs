@@ -13,30 +13,35 @@ namespace DuckHunt
     {
 
         private ArrayList ducks;
-        private MainWindow n;
+        private MainWindow window;
 
-        public GameController(MainWindow n)
+        public GameController(MainWindow window)
         {
-            this.n = n;
+            this.window = window;
             ducks = new ArrayList();
             //create duck and add to this.ducks
-           
-            var duckie = n.DrawRect(10, 10, 50, 50);
-            ducks.Add(duckie);
+
+            Duck d = new Duck(window);
+            d.DrawRect();
+            ducks.Add(d);
             Thread t = new Thread(new ThreadStart(gameLoop));
             t.Start();
+
+            Duck d2 = new Duck(window);
+            d2.DrawRect();
+            ducks.Add(d2);
+            Thread t2 = new Thread(new ThreadStart(gameLoop));
+            t2.Start();
         }
 
         public void gameLoop()
         {
           while(ducks.Count > 0)
             {
-                foreach(Rectangle d in ducks)
+                foreach(Duck d in ducks)
                 {
-                    //n.moveRect(d,2);
+                    d.moveLeft();
                 }
-               
-                //moveducks
             }
 
         }

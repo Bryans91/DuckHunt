@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DuckHunt"
         mc:Ignorable="d"
-        Title="Duuuckkk Hunttt" Height="350" Width="600">
-    <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="592" RenderTransformOrigin="-1.429,-1.562"/>
+        Title="Duuuckkk Hunttt" Width="700" Height="425" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Canvas Name="canvas" Width="700" Height="425" VerticalAlignment="Bottom" Background="DarkCyan">
+        <Canvas Width="700" Height="25" VerticalAlignment="Top" Background="PowderBlue" MouseLeftButtonDown="dragable"/>
+        <Canvas Width="25" Height="25" Canvas.Left="675" VerticalAlignment="Top" Background="Black" MouseLeftButtonDown="closeGame"/>
+    </Canvas>
 </Window>
