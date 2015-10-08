@@ -63,8 +63,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\DuckController.cs" />
     <Compile Include="Controllers\GameController.cs" />
-    <Compile Include="Models\Duck.cs" />
+    <Compile Include="Models\Ducks\GreenDuck.cs" />
+    <Compile Include="Models\Ducks\State\AliveDuck.cs" />
+    <Compile Include="Models\Ducks\State\DeadDuck.cs" />
+    <Compile Include="Models\Ducks\Duck.cs" />
+    <Compile Include="Models\Ducks\DuckFactory.cs" />
+    <Compile Include="Models\Ducks\State\DuckState.cs" />
+    <Compile Include="Models\Ducks\RedDuck.cs" />
+    <Compile Include="Models\Ducks\State\ShotDuck.cs" />
+    <Compile Include="Models\Levels\BossLevel.cs" />
+    <Compile Include="Models\Levels\Level.cs" />
+    <Compile Include="Models\Levels\LevelOne.cs" />
+    <Compile Include="Models\Levels\LevelState.cs" />
+    <Compile Include="Models\Levels\LevelThree.cs" />
+    <Compile Include="Models\Levels\LevelTwo.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -97,6 +111,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

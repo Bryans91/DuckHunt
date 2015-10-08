@@ -8,6 +8,13 @@
         Title="Duuuckkk Hunttt" Width="700" Height="425" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Canvas Name="canvas" Width="700" Height="425" VerticalAlignment="Bottom" Background="DarkCyan">
         <Canvas Width="700" Height="25" VerticalAlignment="Top" Background="PowderBlue" MouseLeftButtonDown="dragable"/>
-        <Canvas Width="25" Height="25" Canvas.Left="675" VerticalAlignment="Top" Background="Black" MouseLeftButtonDown="closeGame"/>
+        <Button Width="25" Height="25" Canvas.Left="675" VerticalAlignment="Top" Background="Black" Click="closeGame"/>
+        <Label x:Name="scoreLabel" Content="Score:" Canvas.Top="25" Foreground="PowderBlue" FontSize="24" Canvas.Left="10"/>
+        <Label x:Name="scoreInt" Content="0" Canvas.Top="25" Foreground="White" FontSize="24" Canvas.Left="84"/>
+        <Label x:Name="levelLabel" Content="Level:" Canvas.Top="25" Foreground="PowderBlue" FontSize="24" Canvas.Left="600"/>
+        <Label x:Name="levelInt" Content="1" Canvas.Top="25" Foreground="White" FontSize="24" Canvas.Left="670"/>
+        <Label x:Name="win" Content="" Canvas.Top="111" Foreground="White" FontSize="128"/>
+        <Label x:Name="title" Content="Duuuckkk Hunttt" Foreground="Black" FontSize="14" FontWeight="Bold" Canvas.Left="5" Canvas.Top="-4"/>
+        <Label x:Name="x" Content="x" Foreground="White" FontSize="12" Canvas.Left="680" Canvas.Top="-2"/>
     </Canvas>
 </Window>

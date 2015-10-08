@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,40 +13,35 @@ namespace DuckHunt
     class GameController
     {
 
-        private ArrayList ducks;
         private MainWindow window;
+        private Level levelState;
+        private DuckController duckController;
 
         public GameController(MainWindow window)
         {
             this.window = window;
-            ducks = new ArrayList();
-            //create duck and add to this.ducks
-
-            Duck d = new Duck(window);
-            d.DrawRect();
-            ducks.Add(d);
-            Thread t = new Thread(new ThreadStart(gameLoop));
-            t.Start();
-
-            Duck d2 = new Duck(window);
-            d2.DrawRect();
-            ducks.Add(d2);
-            Thread t2 = new Thread(new ThreadStart(gameLoop));
-            t2.Start();
+            levelState = new Level(window);
+            levelState.getLevelOne();
+            duckController = new DuckController(window, this);
         }
 
         public void gameLoop()
         {
-          while(ducks.Count > 0)
+            double previous = DateTime.Now.Ticks;
+            double lag = 0.0;
+            while (true)
             {
-                foreach(Duck d in ducks)
+                double current = DateTime.Now.Ticks;
+                double elapsed = current - previous;
+                previous = current;
+                lag += elapsed;
+                while (lag >= 60000)
                 {
-                    d.moveLeft();
+                    duckController.moveDucks();
+                    levelState.checkScore();
+                    lag -= 60000;
                 }
             }
-
         }
-
-
     }
 }
